@@ -5,7 +5,7 @@ import { NutritionistPage } from './components/pages/NutritionistPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/nutrition-website">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/story" element={<StoryPage />} />
