@@ -1,6 +1,9 @@
 import { Container } from '../atoms/Container';
 import { Button } from '../atoms/Button';
 import { MessageCircle } from 'lucide-react';
+import maxIcon from '../../assets/socials/MAX.svg';
+import tgIcon from '../../assets/socials/Telegram SVG Icon.svg';
+import vkIcon from '../../assets/socials/Vk SVG Icon.svg';
 
 export function CtaSection() {
   return (
@@ -47,6 +50,39 @@ export function CtaSection() {
                 Бесплатно
               </div>
             </div>
+          </div>
+
+          {/* Social Messengers Row */}
+          <div className="mt-8 pt-6 border-t border-white/10 flex justify-center gap-8 relative z-10">
+            <a 
+              href="#" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              title="Max"
+            >
+              <img src={maxIcon} alt="Max" className="w-6 h-6" />
+            </a>
+
+            <a 
+              href="https://t.me/katerina_foodhealth_kanal" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              title="Telegram"
+            >
+              <img src={tgIcon} alt="Telegram" className="w-6 h-6" />
+            </a>
+
+            <a 
+              href="#" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              title="VKontakte"
+            >
+              <img src={vkIcon} alt="VK" className="w-6 h-6" />
+            </a>
           </div>
         </div>
       </Container>

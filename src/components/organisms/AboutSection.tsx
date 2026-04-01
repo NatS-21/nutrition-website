@@ -3,10 +3,39 @@ import { Link } from 'react-router-dom';
 import { Container } from '../atoms/Container';
 import { SectionTitle } from '../atoms/SectionTitle';
 import { Button } from '../atoms/Button';
-import { Award, BookOpen, Heart, ChevronDown } from 'lucide-react';
+import { Award, BookOpen, Heart, ChevronDown, FileText, GraduationCap } from 'lucide-react';
+import { CertificateStack } from '../molecules/CertificateStack';
+import { CertificateGallery } from '../molecules/CertificateGallery';
+
+// Import certificates
+import universityPriority1 from '../../assets/sertificates/university/priority/clinical_review.png';
+import universityPriority2 from '../../assets/sertificates/university/priority/couch.png';
+import universityPriority3 from '../../assets/sertificates/university/priority/final.png';
+import universityPriority4 from '../../assets/sertificates/university/priority/food_plan.png';
+import universityPriority5 from '../../assets/sertificates/university/priority/practical.png';
+
+import medassCert from '../../assets/sertificates/medass/medass.jpg';
+import preventMedCert from '../../assets/sertificates/other/prevent-med.png';
+import preventmedPdf from '../../assets/sertificates/other/Sertifikat_uchastnika_Preventmed.pdf';
+
+const universityPriority = [
+  universityPriority1,
+  universityPriority2,
+  universityPriority3,
+  universityPriority4,
+  universityPriority5
+];
+
+// Modules imports using glob - explicitly use root-relative path for reliability in Vite
+const universityModulesPaths = Object.values(import.meta.glob('/src/assets/sertificates/university/modules/*.png', { eager: true, import: 'default' })) as string[];
+
+const universityAll = [...universityPriority, ...universityModulesPaths];
 
 export function AboutSection() {
   const [textExpanded, setTextExpanded] = useState(false);
+  const [universityGalleryOpen, setUniversityGalleryOpen] = useState(false);
+  const [medassGalleryOpen, setMedassGalleryOpen] = useState(false);
+  const [preventMedGalleryOpen, setPreventMedGalleryOpen] = useState(false);
 
   return (
     <section id="about" className="py-20 bg-white">
@@ -101,8 +130,78 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Full-width Expandable Cards Section */}
-        <div className="mt-16 lg:mt-24 grid md:grid-cols-2 gap-6 items-start">
+        {/* Education and Certificates Section - Full Width Row */}
+        <div className="mt-24 lg:mt-32">
+          <SectionTitle centered={false} className="mb-12">
+            <span className="flex items-center gap-4">
+              <GraduationCap size={44} className="text-indigo-950 shrink-0" strokeWidth={1.8} />
+              Образование и сертификаты
+            </span>
+          </SectionTitle>
+          
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* University of Educational Medicine */}
+            <div className="bg-beige-100/30 border border-beige-200/50 rounded-[2.5rem] p-8 md:p-10 flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-start justify-between gap-8 h-full">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-black text-slate-800 leading-tight">
+                  Университет Образовательной Медицины (ООО ИФИДН, Москва)
+                </h3>
+                <p className="text-slate-600 text-lg">Интегративный и клинический нутрициолог.</p>
+              </div>
+              <div className="flex justify-start pt-4 sm:pt-0 shrink-0">
+                <CertificateStack 
+                  images={universityAll} 
+                  onClick={() => setUniversityGalleryOpen(true)} 
+                />
+              </div>
+            </div>
+
+            {/* Right Column: Medass and PreventMed */}
+            <div className="space-y-6">
+              {/* Medass */}
+              <div className="bg-mint-light/10 border border-mint-light/20 rounded-[2rem] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group hover:bg-white transition-all duration-300">
+                <div className="space-y-3">
+                   <h4 className="font-bold text-slate-800 text-xl">ООО НТЦ «Медасс»</h4>
+                   <p className="text-slate-600">Биоимпедансный анализ состава тела.</p>
+                </div>
+                <div className="shrink-0">
+                  <CertificateStack 
+                    images={[medassCert]} 
+                    onClick={() => setMedassGalleryOpen(true)} 
+                    className="h-32 w-48"
+                  />
+                </div>
+              </div>
+
+              {/* PreventMed */}
+              <div className="bg-peach/5 border border-peach/10 rounded-[2rem] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group hover:bg-white transition-all duration-300">
+                <div className="space-y-3">
+                   <h4 className="font-bold text-slate-800 text-xl">Превент Мед</h4>
+                   <p className="text-slate-600">Ассоциация специалистов.</p>
+                   <a 
+                     href={preventmedPdf} 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="inline-flex items-center gap-1.5 text-pantone hover:text-pantone-light transition-colors text-sm font-medium border-b border-pantone/30 mt-2"
+                   >
+                     <FileText size={16} />
+                     PDF Версия
+                   </a>
+                </div>
+                <div className="shrink-0 text-center">
+                  <CertificateStack 
+                    images={[preventMedCert]} 
+                    onClick={() => setPreventMedGalleryOpen(true)} 
+                    className="h-32 w-48"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Specialized Cards grid */}
+        <div className="mt-16 grid md:grid-cols-2 gap-6 items-start">
           <CollapsibleCard title="С чем ещё работаю">
             <ul className="list-disc pl-5 space-y-2 text-slate-600">
               <li>Нарушения углеводного обмена (инсулинорезистентность)</li>
@@ -131,6 +230,23 @@ export function AboutSection() {
             </ul>
           </CollapsibleCard>
         </div>
+
+        {/* Gallery Modals */}
+        <CertificateGallery 
+          images={universityAll} 
+          isOpen={universityGalleryOpen} 
+          onClose={() => setUniversityGalleryOpen(false)} 
+        />
+        <CertificateGallery 
+          images={[medassCert]} 
+          isOpen={medassGalleryOpen} 
+          onClose={() => setMedassGalleryOpen(false)} 
+        />
+        <CertificateGallery 
+          images={[preventMedCert]} 
+          isOpen={preventMedGalleryOpen} 
+          onClose={() => setPreventMedGalleryOpen(false)} 
+        />
 
         {/* Action Cards Section */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">

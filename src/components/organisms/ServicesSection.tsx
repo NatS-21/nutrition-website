@@ -378,13 +378,15 @@ export function ServicesSection() {
           Услуги и форматы работы
         </SectionTitle>
         
-        <div className="flex flex-wrap justify-center gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {services.map((service, idx) => (
-            <div key={idx} className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)] flex">
-              <ServiceCard 
-                {...service} 
-                onMoreInfo={() => setSelectedService(service)}
-              />
+            <div key={idx} className="flex justify-center h-full">
+              <div className="w-full max-w-lg md:max-w-none flex">
+                <ServiceCard 
+                  {...service} 
+                  onMoreInfo={() => setSelectedService(service)}
+                />
+              </div>
             </div>
           ))}
         </div>

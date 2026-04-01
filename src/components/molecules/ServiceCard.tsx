@@ -11,7 +11,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ title, description, forWhom, price, onMoreInfo }: ServiceCardProps) {
   return (
-    <div className="bg-white rounded-3xl p-8 transition-all border border-mint-light flex flex-col h-full group">
+    <div className="bg-white rounded-3xl p-8 transition-all border border-mint-light flex flex-col h-full w-full group">
       <h3 className="text-2xl font-bold text-slate-800 mb-4 group-hover:text-pantone transition-colors">{title}</h3>
       <div className="flex-grow mb-6 text-slate-600 space-y-4">
         <div>

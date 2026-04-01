@@ -36,6 +36,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm flex flex-col">
               <a href="https://t.me/katerina_foodhealth_kanal" target="_blank" rel="noreferrer" className="hover:text-peach transition-colors">Telegram-канал</a>
               <a href="https://vk.com/id333099678" target="_blank" rel="noreferrer" className="hover:text-peach transition-colors">Вконтакте</a>
+              <a href="https://vk.com/id333099678" target="_blank" rel="noreferrer" className="hover:text-peach transition-colors">Max</a>
             </ul>
           </div>
         </div>
