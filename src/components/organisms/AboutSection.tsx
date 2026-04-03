@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import nutritionistImg from '../../assets/nutritionist_profile.png';
 import { Link } from 'react-router-dom';
 import { Container } from '../atoms/Container';
 import { SectionTitle } from '../atoms/SectionTitle';
@@ -64,10 +65,10 @@ export function AboutSection() {
     <section id="about" className="py-12 md:py-20 bg-white">
       <Container>
         {/* Mobile Header: Small Circle Photo + Title */}
-        <div className="lg:hidden flex flex-col items-center mb-6 text-center">
+        <div className="lg:hidden flex flex-col items-center mb-2 text-center">
           <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-turquoise-light bg-beige-100 shrink-0">
              <img 
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400&h=400" 
+                src={nutritionistImg} 
                 alt="Наталья" 
                 className="w-full h-full object-cover"
               />
@@ -77,13 +78,13 @@ export function AboutSection() {
           </SectionTitle>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div className="order-2 lg:order-1 space-y-12">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-start">
+          <div className="order-2 lg:order-1 space-y-4 lg:space-y-12">
             {/* Desktop Large Image */}
             <div className="hidden lg:block relative">
               <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-beige-100 relative border border-turquoise-light">
                 <img 
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800&h=1000" 
+                  src={nutritionistImg} 
                   alt="Наталья в работе" 
                   className="w-full h-full object-cover"
                 />

@@ -14,9 +14,12 @@ export function CtaSection() {
       <div className="absolute top-1/2 left-1/2 -z-0 w-[300px] h-[300px] bg-white/10 rounded-full blur-[80px] opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
 
       <Container className="relative z-10">
-        <div className="max-w-4xl mx-auto backdrop-blur-xl bg-white/10 border border-white/20 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 text-center shadow-2xl overflow-hidden relative group">
+        <div className="max-w-4xl mx-auto backdrop-blur-3xl bg-turquoise-blueish/25 border border-white/20 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 text-center shadow-xl overflow-hidden relative group">
+          {/* Corner Glow ("Засвет") */}
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/5 rounded-full blur-[80px] pointer-events-none group-hover:scale-110 transition-transform duration-1000"></div>
+          
           {/* Subtle inner glow */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none"></div>
           
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight relative z-10">
             Готовы начать путь к жизни, полной энергии и гармонии?
@@ -30,7 +33,7 @@ export function CtaSection() {
             <Button 
               variant="primary" 
               size="lg" 
-              className="bg-peach hover:bg-peach/90 text-white w-full sm:w-auto shadow-lg shadow-peach/20 hover:scale-105 active:scale-95 border-b-4 border-black/10"
+              className="bg-peach hover:bg-peach/90 text-white w-full sm:w-auto hover:scale-105 active:scale-95"
             >
               Записаться на консультацию
             </Button>
@@ -46,7 +49,7 @@ export function CtaSection() {
                 </Button>
               </a>
               {/* Highlight Badge */}
-              <div className="absolute -top-2 -right-2 bg-peach text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full text-white shadow-lg transform rotate-12 group-hover/btn:scale-110 transition-transform">
+              <div className="absolute -top-2 -right-2 bg-peach text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full text-white transform rotate-12 group-hover/btn:scale-110 transition-transform">
                 Бесплатно
               </div>
             </div>

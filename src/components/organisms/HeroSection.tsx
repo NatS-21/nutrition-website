@@ -1,6 +1,7 @@
 import { Container } from '../atoms/Container';
 import { Button } from '../atoms/Button';
 import { CheckCircle2 } from 'lucide-react';
+import nutritionistImg from '../../assets/nutritionist_profile.png';
 
 export function HeroSection() {
   return (
@@ -13,7 +14,7 @@ export function HeroSection() {
           <div className="flex items-center gap-4">
             <div className="lg:hidden w-12 aspect-square rounded-full overflow-hidden border-2 border-turquoise-light flex-shrink-0">
                <img 
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400&h=400" 
+                src={nutritionistImg} 
                 alt="Наталья Семынина" 
                 className="w-full h-full object-cover"
               />
@@ -66,7 +67,7 @@ export function HeroSection() {
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-turquoise-light relative group border border-turquoise-light">
               <div className="absolute inset-0 bg-gradient-to-tr from-turquoise to-transparent opacity-40 mix-blend-multiply group-hover:opacity-20 transition-opacity duration-500"></div>
               <img 
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800&h=1000" 
+                src={nutritionistImg} 
                 alt="Наталья - нутрициолог" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
