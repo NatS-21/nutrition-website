@@ -8,12 +8,11 @@ export default {
     extend: {
       colors: {
         peach: '#FF8A50', // Brighter, more saturated peach
-        pantone: '#779365',
-        mint: {
-          light: '#D5E5C9',
-          DEFAULT: '#A5B99A',
-          dark: '#779365',
-          darker: '#5E7151',
+        turquoise: {
+          light: '#D1ECEB',
+          DEFAULT: '#88C9C5',
+          dark: '#4A9E99',
+          darker: '#2F6A67',
           blueish: '#CADBE7',
         },
         beige: {

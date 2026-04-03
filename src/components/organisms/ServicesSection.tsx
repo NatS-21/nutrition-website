@@ -371,7 +371,7 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-20 bg-mint-light/20 relative overflow-hidden">
+    <section id="services" className="py-20 bg-turquoise-light/20 relative overflow-hidden">
       <div className="absolute top-0 right-0 -z-10 w-96 h-96 bg-beige-100/50 rounded-full blur-3xl opacity-50 translate-x-1/3"></div>
       <Container>
         <SectionTitle subtitle="Выберите формат, который подходит именно вам.">

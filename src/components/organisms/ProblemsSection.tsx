@@ -32,7 +32,7 @@ export function ProblemsSection() {
       setActiveIndex((prev) => (prev + 1) % problems.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [problems.length]);
+  }, [activeIndex, problems.length]);
 
   return (
     <section id="problems" className="pt-8 pb-16 md:pt-12 md:pb-20 bg-[#FaFaFa] overflow-hidden">
@@ -62,7 +62,7 @@ export function ProblemsSection() {
             return (
               <div 
                 key={idx}
-                className={`absolute w-[240px] md:w-[320px] aspect-[1] transition-all duration-700 ease-out p-6 md:p-10 bg-white border border-mint-light rounded-[2.5rem] flex flex-col items-center justify-center text-center
+                className={`absolute w-[240px] md:w-[320px] aspect-[1] transition-all duration-700 ease-out p-6 md:p-10 bg-white border border-turquoise-light rounded-[2.5rem] flex flex-col items-center justify-center text-center
                   ${isActive ? 'z-30 opacity-100 scale-100 rotate-0 translate-x-0' : ''}
                   ${isPrev ? 'z-20 opacity-40 scale-90 -rotate-12 -translate-x-[60%] md:-translate-x-[80%]' : ''}
                   ${isNext ? 'z-20 opacity-40 scale-90 rotate-12 translate-x-[60%] md:translate-x-[80%]' : ''}
@@ -84,7 +84,7 @@ export function ProblemsSection() {
             <Button 
               variant="outline" 
               size="sm" 
-              className="rounded-full w-10 h-10 p-0 flex items-center justify-center border-mint-light text-pantone hover:bg-white"
+              className="rounded-full w-10 h-10 p-0 flex items-center justify-center border-turquoise-light text-turquoise-dark hover:bg-white"
               onClick={prevCard}
             >
               <ChevronLeft size={20} />
@@ -95,7 +95,7 @@ export function ProblemsSection() {
                 <button
                   key={idx}
                   onClick={() => setActiveIndex(idx)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === activeIndex ? 'bg-peach w-5' : 'bg-mint-light'}`}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === activeIndex ? 'bg-peach w-5' : 'bg-turquoise-light'}`}
                 />
               ))}
             </div>
@@ -103,7 +103,7 @@ export function ProblemsSection() {
             <Button 
               variant="outline" 
               size="sm" 
-              className="rounded-full w-10 h-10 p-0 flex items-center justify-center border-mint-light text-pantone hover:bg-white"
+              className="rounded-full w-10 h-10 p-0 flex items-center justify-center border-turquoise-light text-turquoise-dark hover:bg-white"
               onClick={nextCard}
             >
               <ChevronRight size={20} />

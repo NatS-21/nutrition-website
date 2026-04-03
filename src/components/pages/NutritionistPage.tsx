@@ -23,12 +23,12 @@ export function NutritionistPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FDFCFB] text-slate-800 font-sans selection:bg-pantone/20">
+    <div className="min-h-screen bg-[#FDFCFB] text-slate-800 font-sans selection:bg-turquoise-dark/20">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/60 backdrop-blur-xl border-b border-slate-200/50">
         <Container>
           <div className="h-16 flex items-center justify-between">
-            <Link to="/" className="inline-flex items-center gap-2 text-slate-500 hover:text-pantone transition-all group">
+            <Link to="/" className="inline-flex items-center gap-2 text-slate-500 hover:text-turquoise-dark transition-all group">
               <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
               <span className="text-sm font-medium">На главную</span>
             </Link>
@@ -41,17 +41,17 @@ export function NutritionistPage() {
       <main className="pt-16">
         {/* Hero Section */}
         <section className="pt-12 md:pt-16 pb-24 md:pb-32 relative overflow-hidden bg-white">
-          <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-pantone/5 blur-[120px] rounded-full -mr-20 -mt-20"></div>
+          <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-turquoise-dark/5 blur-[120px] rounded-full -mr-20 -mt-20"></div>
           <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-peach/5 blur-[120px] rounded-full -ml-20 -mb-20"></div>
           
           <Container className="relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-              <div className="inline-flex p-3 rounded-2xl bg-mint-light/30 text-pantone mb-4">
+              <div className="inline-flex p-3 rounded-2xl bg-turquoise-light/30 text-turquoise-dark mb-4">
                 <Sparkles size={32} />
               </div>
               <h1 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
                 Сегодня хочу рассказать вам о том, чем занимается <br className="hidden md:block" /> 
-                <span className="text-pantone tracking-tight">интегративный клинический нутрициолог</span>
+                <span className="text-turquoise-dark tracking-tight">интегративный клинический нутрициолог</span>
               </h1>
               <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                 Нутрициолог не лечит конкретные заболевания и не ставит диагнозы. Его задача — <span className="text-slate-900 font-bold">выявлять корневые причины</span> нарушений здоровья и восстанавливать баланс.
@@ -124,14 +124,14 @@ export function NutritionistPage() {
               <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
                 Рассмотрим подробнее корни:
               </h2>
-              <div className="h-1.5 w-24 bg-pantone mx-auto rounded-full"></div>
+              <div className="h-1.5 w-24 bg-turquoise-dark mx-auto rounded-full"></div>
             </div>
 
             {/* Main Roots Grid - 2 cols on mobile */}
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 px-2 sm:px-0">
               {roots.map((item, idx) => (
-                <div key={idx} className="group p-4 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] bg-white border-2 border-slate-100 hover:border-pantone/50 transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col items-center text-center">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-mint-light/40 flex items-center justify-center text-pantone mb-4 sm:mb-6 group-hover:bg-pantone group-hover:text-white transition-all duration-500 border border-slate-100 shadow-inner">
+                <div key={idx} className="group p-4 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] bg-white border-2 border-slate-100 hover:border-turquoise-dark/50 transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col items-center text-center">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-turquoise-light/40 flex items-center justify-center text-turquoise-dark mb-4 sm:mb-6 group-hover:bg-turquoise-dark group-hover:text-white transition-all duration-500 border border-slate-100 shadow-inner">
                     <span className="scale-75 sm:scale-100">{item.icon}</span>
                   </div>
                   <h3 className="text-sm sm:text-lg font-black text-slate-900 mb-2 sm:mb-3 tracking-tight leading-tight">{item.title}</h3>
@@ -168,7 +168,7 @@ export function NutritionistPage() {
           <Container>
             <div className="max-w-4xl mx-auto space-y-12 animate-slide-up">
               <div className="space-y-6">
-                <div className="inline-flex p-3 rounded-2xl bg-pantone/10 text-pantone">
+                <div className="inline-flex p-3 rounded-2xl bg-turquoise-dark/10 text-turquoise-dark">
                   <Heart size={32} />
                 </div>
                 <h2 className="text-2xl md:text-4xl font-black text-slate-900 leading-tight">
@@ -185,10 +185,10 @@ export function NutritionistPage() {
               </div>
 
               <div className="bg-[#FAF9F6] p-10 md:p-16 rounded-[3.5rem] border border-slate-100 shadow-sm relative group overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-mint-light/20 blur-[100px] -mr-32 -mt-32"></div>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-turquoise-light/20 blur-[100px] -mr-32 -mt-32"></div>
                 
                 <div className="relative z-10 space-y-8">
-                  <div className="flex items-center justify-center gap-4 text-pantone">
+                  <div className="flex items-center justify-center gap-4 text-turquoise-dark">
                     <Info size={40} />
                     <h3 className="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
                       Помните: заботьтесь о своём теле заранее
@@ -199,7 +199,7 @@ export function NutritionistPage() {
                   </p>
                   <div className="pt-4">
                     <Link to="/#contact">
-                      <Button variant="primary" size="lg" className="h-16 px-12 text-lg shadow-xl shadow-pantone/20 hover:shadow-pantone/40 transition-all rounded-full group-hover:scale-105">
+                      <Button variant="primary" size="lg" className="h-16 px-12 text-lg shadow-xl shadow-turquoise-dark/20 hover:shadow-turquoise-dark/40 transition-all rounded-full group-hover:scale-105">
                         Записаться на консультацию
                       </Button>
                     </Link>
@@ -217,8 +217,8 @@ export function NutritionistPage() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-slate-400 text-sm">
             <p>© 2026 Наталья Семынина. Все права защищены.</p>
             <div className="flex gap-8">
-              <Link to="/" className="hover:text-pantone transition-colors">Главная</Link>
-              <Link to="/story" className="hover:text-pantone transition-colors">Моя история</Link>
+              <Link to="/" className="hover:text-turquoise-dark transition-colors">Главная</Link>
+              <Link to="/story" className="hover:text-turquoise-dark transition-colors">Моя история</Link>
             </div>
           </div>
         </Container>

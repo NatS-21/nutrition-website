@@ -12,12 +12,12 @@ export function StoryPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FDFCFB] text-slate-800 font-sans selection:bg-pantone/20">
+    <div className="min-h-screen bg-[#FDFCFB] text-slate-800 font-sans selection:bg-turquoise-dark/20">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/60 backdrop-blur-xl border-b border-slate-200/50">
         <Container>
           <div className="h-16 flex items-center justify-between">
-            <Link to="/" className="inline-flex items-center gap-2 text-slate-500 hover:text-pantone transition-all group">
+            <Link to="/" className="inline-flex items-center gap-2 text-slate-500 hover:text-turquoise-dark transition-all group">
               <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
               <span className="text-sm font-medium">На главную</span>
             </Link>
@@ -41,11 +41,11 @@ export function StoryPage() {
           
           <Container className="relative z-10">
             <div className="max-w-2xl animate-slide-up">
-              <div className="inline-block px-4 py-1.5 rounded-full bg-pantone/10 text-pantone text-xs font-bold tracking-widest uppercase mb-8">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-turquoise-dark/10 text-turquoise-dark text-xs font-bold tracking-widest uppercase mb-8">
                 Основано на личном опыте
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-8">
-                Меня зовут <span className="text-pantone">Наталья</span>,<br />
+                Меня зовут <span className="text-turquoise-dark">Наталья</span>,<br />
                 и я верю: в теле нет «лишних» органов.
               </h1>
               <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium">
@@ -98,7 +98,7 @@ export function StoryPage() {
         </section>
 
         {/* The Philosophy Section */}
-        <section className="py-24 bg-pantone text-white relative overflow-hidden">
+        <section className="py-24 bg-turquoise-dark text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,_rgba(255,138,80,0.4)_0%,_transparent_50%)]"></div>
           </div>
@@ -108,7 +108,7 @@ export function StoryPage() {
               <h2 className="text-3xl md:text-5xl font-black leading-tight">
                 Путь, где здоровье — это не удача, а системный результат
               </h2>
-              <p className="text-xl md:text-2xl text-mint-light font-medium leading-relaxed">
+              <p className="text-xl md:text-2xl text-turquoise-light font-medium leading-relaxed">
                 Где лечат не симптомы, а причину. <br />
                 Где органы не «списывают», а восстанавливают.
               </p>
@@ -129,10 +129,10 @@ export function StoryPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { 
-                  icon: <Wind className="text-pantone" size={32} />, 
+                  icon: <Wind className="text-turquoise-dark" size={32} />, 
                   title: "Питание", 
                   desc: "Наладила питание — не диету, а полноценное питание клетки.",
-                  accent: "bg-mint-light/30"
+                  accent: "bg-turquoise-light/30"
                 },
                 { 
                   icon: <Sun className="text-peach" size={32} />, 
@@ -147,10 +147,10 @@ export function StoryPage() {
                   accent: "bg-slate-100"
                 },
                 { 
-                  icon: <Waves className="text-pantone/60" size={32} />, 
+                  icon: <Waves className="text-turquoise-dark/60" size={32} />, 
                   title: "Очищение", 
                   desc: "Провела грамотное очищение и восполнила дефициты.",
-                  accent: "bg-mint-light/20"
+                  accent: "bg-turquoise-light/20"
                 }
               ].map((item, i) => (
                 <div key={i} className={`${item.accent} p-8 rounded-[2rem] border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 group`}>
@@ -170,13 +170,13 @@ export function StoryPage() {
                 <p className="text-lg text-slate-600 leading-relaxed">
                   Через время я снова пришла на проверку. Врачи разводили руками: «Этого не может быть. Выздоровление невозможно». Но анализы говорили обратное. И так было не с одним моим диагнозом.
                 </p>
-                <div className="flex items-center gap-4 text-pantone font-bold text-lg">
-                  <span className="w-12 h-0.5 bg-pantone"></span>
+                <div className="flex items-center gap-4 text-turquoise-dark font-bold text-lg">
+                  <span className="w-12 h-0.5 bg-turquoise-dark"></span>
                   Это алгоритм
                 </div>
               </div>
-              <div className="md:w-1/3 bg-pantone/5 p-8 rounded-3xl border border-pantone/10 text-center">
-                <Sparkles className="text-pantone mx-auto mb-4" size={48} />
+              <div className="md:w-1/3 bg-turquoise-dark/5 p-8 rounded-3xl border border-turquoise-dark/10 text-center">
+                <Sparkles className="text-turquoise-dark mx-auto mb-4" size={48} />
                 <p className="text-slate-700 font-medium leading-relaxed">
                   Алгоритм, который может повторить каждый, если знать, как слушать своё тело.
                 </p>
@@ -224,7 +224,7 @@ export function StoryPage() {
           <Container>
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1 relative">
-                <div className="absolute -inset-4 bg-pantone/10 rounded-[3rem] blur-2xl"></div>
+                <div className="absolute -inset-4 bg-turquoise-dark/10 rounded-[3rem] blur-2xl"></div>
                 <img 
                   src={hobbiesImg} 
                   alt="Увлечения Натальи" 
@@ -247,7 +247,7 @@ export function StoryPage() {
                     { icon: <Sun size={20} />, text: "Природа" }
                   ].map((hobby, idx) => (
                     <div key={idx} className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                      <span className="text-pantone">{hobby.icon}</span>
+                      <span className="text-turquoise-dark">{hobby.icon}</span>
                       <span className="font-bold text-slate-700 text-sm">{hobby.text}</span>
                     </div>
                   ))}
@@ -276,12 +276,12 @@ export function StoryPage() {
               <div className="pt-8 space-y-8">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-6">
                   <Link to="/#contact">
-                    <Button variant="primary" size="lg" className="h-16 px-12 text-lg shadow-xl shadow-pantone/20 hover:shadow-pantone/40 transition-all rounded-full">
+                    <Button variant="primary" size="lg" className="h-16 px-12 text-lg shadow-xl shadow-turquoise-dark/20 hover:shadow-turquoise-dark/40 transition-all rounded-full">
                       Начать свой путь к здоровью
                     </Button>
                   </Link>
                 </div>
-                <p className="text-pantone font-bold flex items-center justify-center gap-2">
+                <p className="text-turquoise-dark font-bold flex items-center justify-center gap-2">
                   <Sparkles size={20} />
                   Готова стать твоим проводником
                 </p>
@@ -297,8 +297,8 @@ export function StoryPage() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-slate-400 text-sm">
             <p>© 2026 Наталья Семынина. Все права защищены.</p>
             <div className="flex gap-8">
-              <Link to="/" className="hover:text-pantone transition-colors">Главная</Link>
-              <Link to="/nutritionist" className="hover:text-pantone transition-colors">О нутрициологии</Link>
+              <Link to="/" className="hover:text-turquoise-dark transition-colors">Главная</Link>
+              <Link to="/nutritionist" className="hover:text-turquoise-dark transition-colors">О нутрициологии</Link>
             </div>
           </div>
         </Container>

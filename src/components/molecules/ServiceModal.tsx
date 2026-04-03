@@ -50,12 +50,12 @@ export function ServiceModal({
       />
       
       {/* Modal Content */}
-      <div className="relative bg-white w-full max-w-2xl max-h-[90vh] flex flex-col rounded-[2.5rem] border border-mint-light animate-in fade-in zoom-in duration-300">
+      <div className="relative bg-white w-full max-w-2xl max-h-[90vh] flex flex-col rounded-[2.5rem] border border-turquoise-light animate-in fade-in zoom-in duration-300">
         {/* Fixed Header with Close Button */}
         <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[110]">
           <button 
             onClick={onClose}
-            className="p-2 rounded-full bg-white/80 backdrop-blur-md border border-mint-light/50 hover:bg-mint-light text-slate-400 hover:text-slate-600 transition-all shadow-sm"
+            className="p-2 rounded-full bg-white/80 backdrop-blur-md border border-turquoise-light/50 hover:bg-turquoise-light text-slate-400 hover:text-slate-600 transition-all shadow-sm"
           >
             <X size={24} />
           </button>
@@ -69,14 +69,14 @@ export function ServiceModal({
             <div className="space-y-8">
               {!hideDescriptionInPopup && (
                 <section>
-                  <h4 className="text-lg font-bold text-pantone mb-3 uppercase tracking-wider text-sm">Что входит во время работы:</h4>
+                  <h4 className="text-lg font-bold text-turquoise-dark mb-3 uppercase tracking-wider text-sm">Что входит во время работы:</h4>
                   <div className="text-slate-600 text-lg">{description}</div>
                 </section>
               )}
 
               {expandedInfo && (
                 <section>
-                  <h4 className="text-lg font-bold text-pantone mb-3 uppercase tracking-wider text-sm">Подробная информация:</h4>
+                  <h4 className="text-lg font-bold text-turquoise-dark mb-3 uppercase tracking-wider text-sm">Подробная информация:</h4>
                   <div className="text-slate-600 text-lg prose prose-slate max-w-none">
                     {expandedInfo}
                   </div>
@@ -84,7 +84,7 @@ export function ServiceModal({
               )}
 
               <section>
-                <h4 className="text-lg font-bold text-pantone mb-3 uppercase tracking-wider text-sm">Для кого подходит:</h4>
+                <h4 className="text-lg font-bold text-turquoise-dark mb-3 uppercase tracking-wider text-sm">Для кого подходит:</h4>
                 <p className="text-slate-600 text-lg leading-relaxed">{forWhom}</p>
               </section>
             </div>
@@ -92,12 +92,12 @@ export function ServiceModal({
         </div>
 
         {/* Fixed Footer */}
-        <div className="p-6 md:px-12 md:pb-8 border-t border-mint-light/30 bg-slate-50/20 rounded-b-[2.5rem]">
+        <div className="p-6 md:px-12 md:pb-8 border-t border-turquoise-light/30 bg-slate-50/20 rounded-b-[2.5rem]">
           <div className="flex flex-row items-center justify-between gap-4">
             {price && (
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Стоимость:</span>
-                <div className="text-2xl md:text-3xl font-black text-pantone leading-none mt-1">{price}</div>
+                <div className="text-2xl md:text-3xl font-black text-turquoise-dark leading-none mt-1">{price}</div>
               </div>
             )}
             <div className="flex gap-4">

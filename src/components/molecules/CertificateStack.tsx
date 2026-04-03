@@ -62,7 +62,7 @@ export function CertificateStack({ images, onClick, className }: CertificateStac
       
       {/* Badge for more certificates if any */}
       {images.length > 3 && (
-        <div className="absolute bottom-2 right-2 z-40 bg-pantone text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg">
+        <div className="absolute bottom-2 right-2 z-40 bg-turquoise-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg">
           +{images.length - 3}
         </div>
       )}

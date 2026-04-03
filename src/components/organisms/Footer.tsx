@@ -1,13 +1,14 @@
 import { Container } from '../atoms/Container';
+import logo from '../../assets/logo/semynina-logo.svg';
 
 export function Footer() {
   return (
-    <footer id="contacts" className="bg-mint-darker text-white/80 py-12">
+    <footer id="contacts" className="bg-turquoise-darker text-white/80 py-12">
       <Container>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 border-b border-white/10 pb-8">
           <div>
-            <div className="text-2xl font-black text-white tracking-wider mb-4">
-              НАТАЛЬЯ
+            <div className="mb-4 h-12">
+              <img src={logo} alt="Наталья Семынина" className="h-full w-auto" />
             </div>
             <p className="text-sm mb-4">
               Индивидуальные консультации нутрициолога онлайн.

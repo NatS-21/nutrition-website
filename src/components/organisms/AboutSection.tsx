@@ -27,9 +27,32 @@ const universityPriority = [
 ];
 
 // Modules imports using glob - explicitly use root-relative path for reliability in Vite
-const universityModulesPaths = Object.values(import.meta.glob('/src/assets/sertificates/university/modules/*.png', { eager: true, import: 'default' })) as string[];
+const modulesRaw = import.meta.glob('/src/assets/sertificates/university/modules/*.png', { eager: true, import: 'default' });
 
-const universityAll = [...universityPriority, ...universityModulesPaths];
+const sortedModulePaths = Object.entries(modulesRaw)
+  .sort(([pathA], [pathB]) => {
+    const nameA = pathA.split('/').pop() || '';
+    const nameB = pathB.split('/').pop() || '';
+    
+    // Check for 'module-N' pattern
+    const matchA = nameA.match(/module-(\d+)/);
+    const matchB = nameB.match(/module-(\d+)/);
+    
+    // If both are modules, sort numerically
+    if (matchA && matchB) {
+      return parseInt(matchA[1]) - parseInt(matchB[1]);
+    }
+    
+    // Modules come before other files
+    if (matchA) return -1;
+    if (matchB) return 1;
+    
+    // Alphabetical sort for others (e.g. cooking.png, erd.png)
+    return nameA.localeCompare(nameB);
+  })
+  .map(([_, value]) => value as string);
+
+const universityAll = [...universityPriority, ...sortedModulePaths];
 
 export function AboutSection() {
   const [textExpanded, setTextExpanded] = useState(false);
@@ -42,7 +65,7 @@ export function AboutSection() {
       <Container>
         {/* Mobile Header: Small Circle Photo + Title */}
         <div className="lg:hidden flex flex-col items-center mb-10 text-center">
-          <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-mint-light bg-beige-100 shrink-0">
+          <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-turquoise-light bg-beige-100 shrink-0">
              <img 
                 src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400&h=400" 
                 alt="Наталья" 
@@ -58,34 +81,34 @@ export function AboutSection() {
           <div className="order-2 lg:order-1 space-y-12">
             {/* Desktop Large Image */}
             <div className="hidden lg:block relative">
-              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-beige-100 relative border border-mint-light">
+              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-beige-100 relative border border-turquoise-light">
                 <img 
                   src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800&h=1000" 
                   alt="Наталья в работе" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-mint rounded-full mix-blend-multiply opacity-50 blur-xl"></div>
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-turquoise rounded-full mix-blend-multiply opacity-50 blur-xl"></div>
               <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-peach rounded-full mix-blend-multiply opacity-30 blur-xl"></div>
             </div>
 
             <ul className="space-y-6 lg:space-y-8">
               <li className="flex gap-4 items-start">
-                <div className="mt-1 bg-mint-light p-2 rounded-xl text-pantone shrink-0"><BookOpen size={24} /></div>
+                <div className="mt-1 bg-turquoise-light p-2 rounded-xl text-turquoise-dark shrink-0"><BookOpen size={24} /></div>
                 <div>
                   <h4 className="font-bold text-slate-800">Профильное образование</h4>
                   <p className="text-slate-600 text-base">Диплом престижного института нутрициологии.</p>
                 </div>
               </li>
               <li className="flex gap-4 items-start">
-                <div className="mt-1 bg-mint-light p-2 rounded-xl text-pantone shrink-0"><Award size={24} /></div>
+                <div className="mt-1 bg-turquoise-light p-2 rounded-xl text-turquoise-dark shrink-0"><Award size={24} /></div>
                 <div>
                   <h4 className="font-bold text-slate-800">Опыт работы</h4>
                   <p className="text-slate-600 text-base">Сотни клиентов, которые наладили ЖКТ и пищевое поведение.</p>
                 </div>
               </li>
               <li className="flex gap-4 items-start">
-                <div className="mt-1 bg-mint-light p-2 rounded-xl text-pantone shrink-0"><Heart size={24} /></div>
+                <div className="mt-1 bg-turquoise-light p-2 rounded-xl text-turquoise-dark shrink-0"><Heart size={24} /></div>
                 <div>
                   <h4 className="font-bold text-slate-800">Подход</h4>
                   <p className="text-slate-600 text-base">Без осуждения. Мягко, с заботой и фокусом на здоровье.</p>
@@ -119,7 +142,7 @@ export function AboutSection() {
                   <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none lg:hidden" />
                   <button 
                     onClick={() => setTextExpanded(true)}
-                    className="lg:hidden absolute bottom-0 left-0 text-pantone font-bold flex items-center gap-1 group py-1 bg-white/60 backdrop-blur-sm rounded-md px-2 -mb-1"
+                    className="lg:hidden absolute bottom-0 left-0 text-turquoise-dark font-bold flex items-center gap-1 group py-1 bg-white/60 backdrop-blur-sm rounded-md px-2 -mb-1"
                   >
                     Читать далее
                     <ChevronDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
@@ -159,7 +182,7 @@ export function AboutSection() {
             {/* Right Column: Medass and PreventMed */}
             <div className="space-y-6">
               {/* Medass */}
-              <div className="bg-mint-light/10 border border-mint-light/20 rounded-[2rem] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group hover:bg-white transition-all duration-300">
+              <div className="bg-turquoise-light/10 border border-turquoise-light/20 rounded-[2rem] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 group hover:bg-white transition-all duration-300">
                 <div className="space-y-3">
                    <h4 className="font-bold text-slate-800 text-xl">ООО НТЦ «Медасс»</h4>
                    <p className="text-slate-600">Биоимпедансный анализ состава тела.</p>
@@ -182,7 +205,7 @@ export function AboutSection() {
                      href={preventmedPdf} 
                      target="_blank" 
                      rel="noopener noreferrer"
-                     className="inline-flex items-center gap-1.5 text-pantone hover:text-pantone-light transition-colors text-sm font-medium border-b border-pantone/30 mt-2"
+                     className="inline-flex items-center gap-1.5 text-turquoise-dark hover:text-turquoise-dark-light transition-colors text-sm font-medium border-b border-turquoise-dark/30 mt-2"
                    >
                      <FileText size={16} />
                      PDF Версия
@@ -265,15 +288,15 @@ export function AboutSection() {
           </div>
 
           {/* Card 2: Who is Nutritionist */}
-          <div className="bg-mint-light/20 border border-mint-light/40 rounded-[2.5rem] p-8 md:p-10 flex flex-col items-center lg:items-start justify-between gap-8 overflow-hidden relative group hover:border-pantone/40 transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-mint-light/10">
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-pantone/10 blur-3xl -ml-20 -mb-20 group-hover:scale-125 transition-transform duration-700"></div>
+          <div className="bg-turquoise-light/20 border border-turquoise-light/40 rounded-[2.5rem] p-8 md:p-10 flex flex-col items-center lg:items-start justify-between gap-8 overflow-hidden relative group hover:border-turquoise-dark/40 transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-turquoise-light/10">
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-turquoise-dark/10 blur-3xl -ml-20 -mb-20 group-hover:scale-125 transition-transform duration-700"></div>
             <div className="relative z-10 text-center lg:text-left">
               <h3 className="text-2xl md:text-3xl font-black text-slate-800 mb-3">Чем занимается нутрициолог?</h3>
               <p className="text-slate-600 text-lg leading-relaxed">Чем этот специалист отличается от врача и как он помогает изменить вашу жизнь</p>
             </div>
             <div className="relative z-10 w-full lg:w-auto mt-auto">
               <Link to="/nutritionist">
-                <Button variant="outline" className="w-full lg:w-auto px-10 h-14 text-base bg-white/50 backdrop-blur-sm border-pantone/30 text-pantone hover:bg-pantone hover:text-white transition-all">Узнать подробнее</Button>
+                <Button variant="outline" className="w-full lg:w-auto px-10 h-14 text-base bg-white/50 backdrop-blur-sm border-turquoise-dark/30 text-turquoise-dark hover:bg-turquoise-dark hover:text-white transition-all">Узнать подробнее</Button>
               </Link>
             </div>
           </div>
@@ -287,19 +310,19 @@ function CollapsibleCard({ title, children }: { title: string, children: React.R
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-mint-light rounded-2xl overflow-hidden bg-white hover:border-pantone/30 transition-colors">
+    <div className="border border-turquoise-light rounded-2xl overflow-hidden bg-white hover:border-turquoise-dark/30 transition-colors">
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full p-5 flex items-center justify-between text-left group"
       >
-        <span className="font-bold text-slate-800 text-lg group-hover:text-pantone transition-colors">{title}</span>
+        <span className="font-bold text-slate-800 text-lg group-hover:text-turquoise-dark transition-colors">{title}</span>
         <ChevronDown 
-          className={`text-slate-400 group-hover:text-pantone transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
+          className={`text-slate-400 group-hover:text-turquoise-dark transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
           size={20} 
         />
       </button>
       <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100 p-5 pt-0' : 'max-h-0 opacity-0'}`}>
-        <div className="border-t border-mint-light/30 pt-4">
+        <div className="border-t border-turquoise-light/30 pt-4">
           {children}
         </div>
       </div>

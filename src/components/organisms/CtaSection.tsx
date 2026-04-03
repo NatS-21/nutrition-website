@@ -2,14 +2,14 @@ import { Container } from '../atoms/Container';
 import { Button } from '../atoms/Button';
 import { MessageCircle } from 'lucide-react';
 import maxIcon from '../../assets/socials/MAX.svg';
-import tgIcon from '../../assets/socials/Telegram SVG Icon.svg';
-import vkIcon from '../../assets/socials/Vk SVG Icon.svg';
+import tgIcon from '../../assets/socials/Telegram.svg';
+import vkIcon from '../../assets/socials/Vk.svg';
 
 export function CtaSection() {
   return (
-    <section className="py-24 bg-pantone relative overflow-hidden">
+    <section className="py-24 bg-turquoise-dark relative overflow-hidden">
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 -z-0 w-[500px] h-[500px] bg-mint-light/30 rounded-full blur-[120px] opacity-60 translate-x-1/3 -translate-y-1/2 animate-pulse"></div>
+      <div className="absolute top-0 right-0 -z-0 w-[500px] h-[500px] bg-turquoise-light/30 rounded-full blur-[120px] opacity-60 translate-x-1/3 -translate-y-1/2 animate-pulse"></div>
       <div className="absolute bottom-0 left-0 -z-0 w-[400px] h-[400px] bg-peach/20 rounded-full blur-[100px] opacity-40 -translate-x-1/4 translate-y-1/2"></div>
       <div className="absolute top-1/2 left-1/2 -z-0 w-[300px] h-[300px] bg-white/10 rounded-full blur-[80px] opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
 
@@ -22,8 +22,8 @@ export function CtaSection() {
             Готовы начать путь к жизни, полной энергии и гармонии?
           </h2>
           
-          <p className="text-lg md:text-xl text-mint-light/90 mb-10 max-w-2xl mx-auto leading-relaxed relative z-10">
-            Запишитесь на консультацию или просто задайте вопрос. Любые уточнения в Telegram — <span className="text-white font-bold underline underline-offset-4 decoration-peach/50">всегда бесплатно</span>, я с радостью подскажу верное направление.
+          <p className="text-lg md:text-xl text-white mb-10 max-w-2xl mx-auto leading-relaxed relative z-10">
+            Запишитесь на консультацию или просто задайте вопрос. Любые уточнения в Telegram — <span className="text-white font-bold underline underline-offset-4 decoration-peach">всегда бесплатно</span>, я с радостью подскажу верное направление.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
@@ -58,7 +58,7 @@ export function CtaSection() {
               href="#" 
               target="_blank" 
               rel="noreferrer" 
-              className="opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              className="opacity-70 hover:opacity-100 hover:scale-110 transition-all duration-300"
               title="Max"
             >
               <img src={maxIcon} alt="Max" className="w-6 h-6" />
@@ -68,7 +68,7 @@ export function CtaSection() {
               href="https://t.me/katerina_foodhealth_kanal" 
               target="_blank" 
               rel="noreferrer" 
-              className="opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              className="opacity-70 hover:opacity-100 hover:scale-110 transition-all duration-300"
               title="Telegram"
             >
               <img src={tgIcon} alt="Telegram" className="w-6 h-6" />
@@ -78,7 +78,7 @@ export function CtaSection() {
               href="#" 
               target="_blank" 
               rel="noreferrer" 
-              className="opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              className="opacity-70 hover:opacity-100 hover:scale-110 transition-all duration-300"
               title="VKontakte"
             >
               <img src={vkIcon} alt="VK" className="w-6 h-6" />

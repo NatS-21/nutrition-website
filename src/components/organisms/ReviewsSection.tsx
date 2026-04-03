@@ -21,7 +21,7 @@ export function ReviewsSection() {
   ];
 
   return (
-    <section id="reviews" className="py-20 bg-mint-light/20">
+    <section id="reviews" className="py-20 bg-turquoise-light/20">
       <Container>
         <SectionTitle subtitle="Это работает не только в теории.">
           Отзывы и результаты
@@ -29,14 +29,14 @@ export function ReviewsSection() {
         
         <div className="grid md:grid-cols-3 gap-8 mt-12">
           {reviews.map((review, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-3xl border border-mint-light">
+            <div key={idx} className="bg-white p-8 rounded-3xl border border-turquoise-light">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-beige-200 rounded-full flex items-center justify-center text-pantone font-bold text-xl">
+                <div className="w-12 h-12 bg-beige-200 rounded-full flex items-center justify-center text-turquoise-dark font-bold text-xl">
                   {review.name[0]}
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-800">{review.name}</h4>
-                  <p className="text-sm text-pantone font-medium">{review.result}</p>
+                  <p className="text-sm text-turquoise-dark font-medium">{review.result}</p>
                 </div>
               </div>
               <p className="text-slate-600 italic">«{review.text}»</p>
