@@ -7,7 +7,7 @@ import vkIcon from '../../assets/socials/Vk.svg';
 
 export function CtaSection() {
   return (
-    <section className="py-24 bg-turquoise-dark relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-turquoise-dark relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 -z-0 w-[500px] h-[500px] bg-turquoise-light/30 rounded-full blur-[120px] opacity-60 translate-x-1/3 -translate-y-1/2 animate-pulse"></div>
       <div className="absolute bottom-0 left-0 -z-0 w-[400px] h-[400px] bg-peach/20 rounded-full blur-[100px] opacity-40 -translate-x-1/4 translate-y-1/2"></div>

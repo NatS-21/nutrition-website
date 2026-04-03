@@ -32,7 +32,7 @@ export function WorkflowSection() {
   ];
 
   return (
-    <section id="workflow" className="py-24 bg-white relative overflow-hidden">
+    <section id="workflow" className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-turquoise-light/20 via-transparent to-transparent -z-0"></div>
       
@@ -41,7 +41,7 @@ export function WorkflowSection() {
           Как проходит работа
         </SectionTitle>
         
-        <div className="max-w-4xl mx-auto mt-20 relative">
+        <div className="max-w-4xl mx-auto mt-10 md:mt-20 relative">
           {/* Animated Timeline Line */}
           <div className="absolute left-[31px] top-8 bottom-8 w-[2px] bg-gradient-to-b from-turquoise-dark via-turquoise-light to-peach opacity-30 md:left-[31px] -z-10"></div>
           
@@ -55,7 +55,7 @@ export function WorkflowSection() {
         </div>
         
         {/* Bottom decorative element */}
-        <div className="mt-20 text-center">
+        <div className="mt-12 md:mt-20 text-center">
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-turquoise-dark/5 border border-turquoise-dark/10 text-turquoise-dark font-bold text-sm">
             <span className="w-2 h-2 rounded-full bg-turquoise-dark animate-ping"></span>
             Я буду рядом на каждом этапе

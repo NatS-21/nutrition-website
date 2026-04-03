@@ -35,7 +35,7 @@ export function ProblemsSection() {
   }, [activeIndex, problems.length]);
 
   return (
-    <section id="problems" className="pt-8 pb-16 md:pt-12 md:pb-20 bg-[#FaFaFa] overflow-hidden">
+    <section id="problems" className="pt-8 pb-12 md:pt-12 md:pb-20 bg-[#FaFaFa] overflow-hidden">
       <Container>
         <SectionTitle 
           subtitle="Я понимаю вашу ситуацию и уже работала с такими запросами."

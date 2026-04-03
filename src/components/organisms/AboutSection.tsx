@@ -61,10 +61,10 @@ export function AboutSection() {
   const [preventMedGalleryOpen, setPreventMedGalleryOpen] = useState(false);
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-12 md:py-20 bg-white">
       <Container>
         {/* Mobile Header: Small Circle Photo + Title */}
-        <div className="lg:hidden flex flex-col items-center mb-10 text-center">
+        <div className="lg:hidden flex flex-col items-center mb-6 text-center">
           <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-turquoise-light bg-beige-100 shrink-0">
              <img 
                 src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400&h=400" 

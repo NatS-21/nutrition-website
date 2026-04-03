@@ -21,13 +21,13 @@ export function ReviewsSection() {
   ];
 
   return (
-    <section id="reviews" className="py-20 bg-turquoise-light/20">
+    <section id="reviews" className="py-12 md:py-20 bg-turquoise-light/20">
       <Container>
         <SectionTitle subtitle="Это работает не только в теории.">
           Отзывы и результаты
         </SectionTitle>
         
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
+        <div className="grid md:grid-cols-3 gap-8 mt-8 md:mt-12">
           {reviews.map((review, idx) => (
             <div key={idx} className="bg-white p-8 rounded-3xl border border-turquoise-light">
               <div className="flex items-center gap-4 mb-6">
